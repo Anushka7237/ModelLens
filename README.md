@@ -56,7 +56,7 @@ ModelLens/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Anushka7237/ModelLens.git
 cd ModelLens
 ```
 
