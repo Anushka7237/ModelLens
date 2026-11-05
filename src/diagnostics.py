@@ -437,9 +437,11 @@ def compare_model_performance(baseline_metrics, fixed_metrics):
     for metric in baseline_metrics:
         before = baseline_metrics[metric]
         after = fixed_metrics[metric]
-        comparison[metric] = {
-            "before": round(float(before), 4),
-            "after": round(float(after), 4),
-            "change": round(float(after - before), 4)
-        }
+        # Compare only numeric metrics
+        if isinstance(before, (int, float)) and isinstance(after, (int, float)):
+            comparison[metric] = {
+                "before": round(float(before), 4),
+                "after": round(float(after), 4),
+                "change": round(float(after - before), 4)
+            }
     return comparison

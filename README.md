@@ -1,75 +1,93 @@
 # ModelLens
 
-ModelLens is a machine-learning model diagnostics and explainability platform designed to identify potential issues in tabular datasets and trained models. It analyzes data quality, evaluates model performance, provides evidence-based diagnostic insights, and allows users to experiment with corrective actions and compare model performance before and after applying fixes.
+ModelLens is a Python-based machine learning diagnostics and explainability toolkit for tabular data. It helps users detect data quality issues, evaluate model behavior, explain feature importance, and generate actionable recommendations for improving model performance.
 
-## Key Features
+## What ModelLens does
 
-- **Dataset Profiling:** Analyze dataset dimensions, data types, missing values, duplicates, and feature statistics.
-- **Data Quality Diagnostics:** Detect missing values, duplicate rows, constant and near-constant features, low-variance features, and highly correlated features.
-- **Model Diagnostics:** Identify potential class imbalance, overfitting, underfitting, and train/test distribution shifts.
-- **Outlier Detection:** Detect outliers using the IQR method and classify their severity based on the percentage of affected values.
-- **Data Correction:** Apply IQR-based outlier capping and verify the changes by running diagnostics again.
-- **Model Evaluation:** Evaluate classification models using accuracy, precision, recall, and F1-score.
-- **Performance Comparison:** Compare baseline and corrected models to understand the impact of data preprocessing on model performance.
-- **Explainability with SHAP:** Analyze global feature importance and understand how individual features contribute to model predictions.
-- **Experiment Tracking:** Save and retrieve experiment details, applied fixes, model metrics, performance comparisons, and timestamps using JSON.
+ModelLens focuses on three connected goals:
 
-## Project Structure
+- Data quality assessment: identify missing values, duplicates, constant features, near-constant features, low-variance signals, high correlations, and outliers.
+- Model diagnostics: detect class imbalance, overfitting, underfitting, train/test distribution drift, and possible target leakage.
+- Explainable ML workflow: generate SHAP-based feature importance summaries, local explanations, and recommendation reports for decision support.
+
+## Key features
+
+- Dataset profiling and issue detection across tabular features
+- Outlier detection using the IQR method
+- Model evaluation with accuracy, precision, recall, F1, ROC-AUC, and PR-AUC
+- SHAP-based global and local explainability
+- Recommendation engine for corrective actions
+- JSON report generation for diagnostics, model summaries, and experiment tracking
+- Test suite covering core diagnostics and evaluation behavior
+
+## Project structure
 
 ```text
 ModelLens/
-│
 ├── data/
 │   ├── sample_dataset.csv
 │   ├── diagnostic_report.json
-│   ├── outlier_experiment.json
-│   └── experiments.json
-│
-├── src/
-│   ├── diagnostics.py
-│   └── experiment_tracker.py
-│
+│   ├── explainability_report.json
+│   ├── model_report.json
+│   ├── recommendation_report.json
+│   └── report_overview.json
 ├── notebooks/
 │   └── modelens_v1.ipynb
-│
+├── src/
+│   ├── diagnostics.py
+│   ├── evaluation.py
+│   ├── explainability.py
+│   ├── experiment_tracker.py
+│   ├── recommendations.py
+│   └── reporting.py
 ├── tests/
-│   └── test_diagnostics.py
-│
+│   ├── test_diagnostics.py
+│   ├── test_evaluation.py
+│   ├── test_explainability.py
+│   ├── test_recommendations.py
+│   └── test_reporting.py
 ├── requirements.txt
-└── README.md
+├── .gitignore
+├── README.md
+└── venv
 ```
 
-## Tech Stack
+## Tech stack
 
-- **Programming Language:** Python
-- **Data Processing:** Pandas, NumPy, SciPy
-- **Machine Learning:** Scikit-learn
-- **Explainable AI:** SHAP
-- **Data Visualization:** Matplotlib, SHAP plots
-- **Experiment Tracking:** JSON
-- **Testing:** Pytest
-- **Development Environment:** Jupyter Notebook, VS Code
-- **Version Control:** Git and GitHub
+- Python
+- pandas, NumPy, SciPy
+- scikit-learn
+- SHAP
+- Pytest
+- Jupyter Notebook
 
-## Setup and Installation
+## Getting started
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Anushka7237/ModelLens.git
 cd ModelLens
 ```
 
 ### 2. Create a virtual environment
 
-```powershell
-python -m venv venv
+```bash
+python -m venv .venv
 ```
 
-### 3. Activate the virtual environment
+### 3. Activate the environment
+
+On Windows PowerShell:
 
 ```powershell
-.\venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
+```
+
+On macOS/Linux:
+
+```bash
+source .venv/bin/activate
 ```
 
 ### 4. Install dependencies
@@ -78,38 +96,76 @@ python -m venv venv
 python -m pip install -r requirements.txt
 ```
 
-### 5. Run the notebook
+## Quick usage example
 
-Open the following notebook in VS Code or Jupyter:
+The project is structured as a Python toolkit, so you can import the diagnostic and evaluation utilities directly from the `src` package.
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+from src.diagnostics import run_diagnostics
+from src.evaluation import evaluate_classification_model
+from src.explainability import calculate_shap_values, create_explainability_report
+
+# Load a dataset
+# df = pd.read_csv("data/sample_dataset.csv")
+# target = "target"
+
+# Split into train/test sets
+# X = df.drop(columns=[target])
+# y = df[target]
+# X_train, X_test, y_train, y_test = train_test_split(
+#     X, y, test_size=0.2, random_state=42
+# )
+
+# Train a model
+# model = LogisticRegression(max_iter=1000)
+# model.fit(X_train, y_train)
+
+# Run diagnostics and evaluation
+# diagnostics = run_diagnostics(df, target, model, X_train, y_train, X_test, y_test)
+# metrics = evaluate_classification_model(model, X_test, y_test)
+
+# Explain model behavior
+# shap_values = calculate_shap_values(model, X_train, X_test)
+# report = create_explainability_report(shap_values, X.columns.tolist())
+```
+
+## Notebook workflow
+
+The repository includes a notebook for interactive exploration:
 
 ```text
 notebooks/modelens_v1.ipynb
 ```
 
-Run the cells sequentially to explore dataset diagnostics, model training, corrective experiments, performance comparisons, and SHAP explanations.
+This notebook walks through dataset diagnostics, model training, outlier remediation experiments, performance comparisons, and SHAP-driven feature analysis.
 
-## Current Experiment: IQR Outlier Capping
+## Output and reporting
 
-ModelLens currently includes an outlier-capping experiment using the Interquartile Range (IQR) method.
+ModelLens writes structured JSON outputs into the `data/` folder, including:
 
-- **Applied Fix:** IQR-based outlier capping
-- **Baseline Accuracy:** 81%
-- **Accuracy After Fix:** 80%
-- **Baseline F1-score:** 0.81
-- **F1-score After Fix:** 0.798
+- diagnostic reports
+- explanation summaries
+- recommendation reports
+- overall model summaries
 
-The experiment demonstrates that removing detected data-quality issues does not necessarily improve predictive performance. ModelLens preserves both diagnostic results and performance comparisons to support evidence-based decisions.
+These outputs make it easier to compare model behavior before and after applying fixes.
 
-## Running Tests
+## Testing
 
-Execute the following command from the project root:
+Run the test suite from the project root:
 
 ```bash
 python -m pytest
 ```
 
-## Project Goal
+## Current status
 
-The goal of ModelLens is to make machine-learning experiments more transparent and interpretable by combining automated diagnostics, evidence-based recommendations, explainability, corrective experiments, and performance tracking in one platform.
+ModelLens is currently a prototype-style ML diagnostics toolkit. It already includes diagnostics, explanation utilities, recommendation generation, and evaluation helpers, and it is designed to be extended as a more complete model-quality and decision-support platform.
 
-**Current Status:** Prototype under development. Classification diagnostics, IQR-based outlier capping, experiment tracking, and initial SHAP feature-importance analysis are implemented. Further development will expand the corrective-action workflow and platform capabilities.
+## Project goal
+
+The goal of ModelLens is to make machine learning experiments more transparent, interpretable, and evidence-driven by combining automated diagnostics, corrective recommendations, explainability, and experiment tracking in one workflow.

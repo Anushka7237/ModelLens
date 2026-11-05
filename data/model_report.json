@@ -1,0 +1,217 @@
+{
+    "diagnostics": {
+        "missing_values": {},
+        "duplicate_rows": {
+            "count": 0,
+            "percentage": 0.0,
+            "detected": false
+        },
+        "constant_features": [],
+        "near_constant_features": [],
+        "high_correlations": [],
+        "outliers": {
+            "feature_1": {
+                "count": 7,
+                "percentage": 0.7,
+                "non_outlier_count": 993,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            },
+            "feature_2": {
+                "count": 51,
+                "percentage": 5.1,
+                "non_outlier_count": 949,
+                "severity": "high",
+                "reason": "More than 5% of the values are detected as outliers."
+            },
+            "feature_3": {
+                "count": 10,
+                "percentage": 1.0,
+                "non_outlier_count": 990,
+                "severity": "medium",
+                "reason": "Between 1% and 5% of the values are detected as outliers."
+            },
+            "feature_4": {
+                "count": 8,
+                "percentage": 0.8,
+                "non_outlier_count": 992,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            },
+            "feature_5": {
+                "count": 4,
+                "percentage": 0.4,
+                "non_outlier_count": 996,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            },
+            "feature_6": {
+                "count": 2,
+                "percentage": 0.2,
+                "non_outlier_count": 998,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            },
+            "feature_7": {
+                "count": 6,
+                "percentage": 0.6,
+                "non_outlier_count": 994,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            },
+            "feature_8": {
+                "count": 4,
+                "percentage": 0.4,
+                "non_outlier_count": 996,
+                "severity": "low",
+                "reason": "Less than 1% of the values are detected as outliers."
+            }
+        },
+        "class_imbalance": {
+            "detected": 0.0,
+            "minority_class": 1.0,
+            "minority_ratio": 0.498,
+            "distribution": {
+                "0": 0.502,
+                "1": 0.498
+            },
+            "evidence": {
+                "minority_class": 1.0,
+                "minority_percentage": 49.8,
+                "majority_class": 0.0,
+                "majority_percentage": 50.2,
+                "distribution": {
+                    "0": 50.2,
+                    "1": 49.8
+                }
+            }
+        },
+        "overfitting": {
+            "detected": false,
+            "train_accuracy": 0.8163,
+            "test_accuracy": 0.81,
+            "gap": 0.0062
+        },
+        "underfitting": {
+            "detected": false,
+            "train_accuracy": 0.8163
+        },
+        "distribution_shift": {},
+        "low_variance_features": [],
+        "target_leakage": []
+    },
+    "explainability": {
+        "global_summary": {
+            "total_features": 8,
+            "top_5_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "feature_importance": [
+            {
+                "feature": "feature_2",
+                "mean_abs_shap": 1.0955966577249228
+            },
+            {
+                "feature": "feature_4",
+                "mean_abs_shap": 0.8563034104545842
+            },
+            {
+                "feature": "feature_7",
+                "mean_abs_shap": 0.6788529498997157
+            },
+            {
+                "feature": "feature_6",
+                "mean_abs_shap": 0.552432405025171
+            },
+            {
+                "feature": "feature_3",
+                "mean_abs_shap": 0.5015633380743709
+            },
+            {
+                "feature": "feature_1",
+                "mean_abs_shap": 0.4985743702242877
+            },
+            {
+                "feature": "feature_5",
+                "mean_abs_shap": 0.027442496018760303
+            },
+            {
+                "feature": "feature_8",
+                "mean_abs_shap": 0.0016361651096396112
+            }
+        ],
+        "local_summary": {
+            "most_influential_feature": "feature_2",
+            "shap_value": 3.1333,
+            "impact": "increases model output"
+        },
+        "local_explanation": [
+            {
+                "feature": "feature_2",
+                "shap_value": 3.133270710670144,
+                "abs_shap": 3.133270710670144
+            },
+            {
+                "feature": "feature_1",
+                "shap_value": -0.9778510107837887,
+                "abs_shap": 0.9778510107837887
+            },
+            {
+                "feature": "feature_4",
+                "shap_value": 0.8417095519668971,
+                "abs_shap": 0.8417095519668971
+            },
+            {
+                "feature": "feature_6",
+                "shap_value": -0.7492995489570469,
+                "abs_shap": 0.7492995489570469
+            },
+            {
+                "feature": "feature_7",
+                "shap_value": -0.6405383077406004,
+                "abs_shap": 0.6405383077406004
+            },
+            {
+                "feature": "feature_3",
+                "shap_value": -0.4962634215503357,
+                "abs_shap": 0.4962634215503357
+            },
+            {
+                "feature": "feature_5",
+                "shap_value": 0.0671536146066983,
+                "abs_shap": 0.0671536146066983
+            },
+            {
+                "feature": "feature_8",
+                "shap_value": 0.0010116013553384008,
+                "abs_shap": 0.0010116013553384008
+            }
+        ]
+    },
+    "recommendations": {
+        "total_recommendations": 1,
+        "high_priority": 0,
+        "medium_priority": 1,
+        "recommendations": [
+            {
+                "diagnostic": "outliers",
+                "issue": "Potential outliers detected",
+                "reason": "Extreme values may affect some models, but they can also represent valid data.",
+                "recommended_action": "Investigate outliers and test robust handling",
+                "suggested_methods": [
+                    "IQR-based capping",
+                    "Log transformation where appropriate",
+                    "Robust scaling",
+                    "Keep legitimate extreme values"
+                ],
+                "priority": "Medium",
+                "requires_user_review": true
+            }
+        ]
+    }
+}

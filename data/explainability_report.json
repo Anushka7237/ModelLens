@@ -1,0 +1,93 @@
+{
+    "global_summary": {
+        "total_features": 8,
+        "top_5_features": [
+            "feature_2",
+            "feature_4",
+            "feature_7",
+            "feature_6",
+            "feature_3"
+        ]
+    },
+    "feature_importance": [
+        {
+            "feature": "feature_2",
+            "mean_abs_shap": 1.0955966577249228
+        },
+        {
+            "feature": "feature_4",
+            "mean_abs_shap": 0.8563034104545842
+        },
+        {
+            "feature": "feature_7",
+            "mean_abs_shap": 0.6788529498997157
+        },
+        {
+            "feature": "feature_6",
+            "mean_abs_shap": 0.552432405025171
+        },
+        {
+            "feature": "feature_3",
+            "mean_abs_shap": 0.5015633380743709
+        },
+        {
+            "feature": "feature_1",
+            "mean_abs_shap": 0.4985743702242877
+        },
+        {
+            "feature": "feature_5",
+            "mean_abs_shap": 0.027442496018760303
+        },
+        {
+            "feature": "feature_8",
+            "mean_abs_shap": 0.0016361651096396112
+        }
+    ],
+    "local_summary": {
+        "most_influential_feature": "feature_2",
+        "shap_value": 3.1333,
+        "impact": "increases model output"
+    },
+    "local_explanation": [
+        {
+            "feature": "feature_2",
+            "shap_value": 3.133270710670144,
+            "abs_shap": 3.133270710670144
+        },
+        {
+            "feature": "feature_1",
+            "shap_value": -0.9778510107837887,
+            "abs_shap": 0.9778510107837887
+        },
+        {
+            "feature": "feature_4",
+            "shap_value": 0.8417095519668971,
+            "abs_shap": 0.8417095519668971
+        },
+        {
+            "feature": "feature_6",
+            "shap_value": -0.7492995489570469,
+            "abs_shap": 0.7492995489570469
+        },
+        {
+            "feature": "feature_7",
+            "shap_value": -0.6405383077406004,
+            "abs_shap": 0.6405383077406004
+        },
+        {
+            "feature": "feature_3",
+            "shap_value": -0.4962634215503357,
+            "abs_shap": 0.4962634215503357
+        },
+        {
+            "feature": "feature_5",
+            "shap_value": 0.0671536146066983,
+            "abs_shap": 0.0671536146066983
+        },
+        {
+            "feature": "feature_8",
+            "shap_value": 0.0010116013553384008,
+            "abs_shap": 0.0010116013553384008
+        }
+    ]
+}

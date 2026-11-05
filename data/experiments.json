@@ -36,7 +36,8 @@
                 "change": -0.012
             }
         },
-        "timestamp": "2026-11-04T14:48:55.414053"
+        "timestamp": "2026-11-04T14:48:55.414053",
+        "experiment_id": "f413cdec-38ef-4082-859e-4b5ebc89fe70"
     },
     {
         "experiment_name": "Outlier Capping Experiment",
@@ -75,6 +76,301 @@
                 "change": -0.012
             }
         },
-        "timestamp": "2026-11-05T13:52:40.436724"
+        "timestamp": "2026-11-05T13:52:40.436724",
+        "experiment_id": "d5eeb0ad-5e95-4a9c-95e5-df784b797a4d"
+    },
+    {
+        "experiment_name": "Outlier Capping Experiment V2",
+        "applied_fix": "IQR Outlier Capping",
+        "baseline_metrics": {
+            "accuracy": 0.81,
+            "precision": 0.81,
+            "recall": 0.81,
+            "f1_score": 0.81,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    19,
+                    81
+                ]
+            ],
+            "roc_auc": 0.8853,
+            "pr_auc": 0.8561
+        },
+        "fixed_model_metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8061,
+            "recall": 0.79,
+            "f1_score": 0.798,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    21,
+                    79
+                ]
+            ],
+            "roc_auc": 0.886,
+            "pr_auc": 0.8588
+        },
+        "performance_comparison": {
+            "accuracy": {
+                "before": 0.81,
+                "after": 0.8,
+                "change": -0.01
+            },
+            "precision": {
+                "before": 0.81,
+                "after": 0.8061,
+                "change": -0.0039
+            },
+            "recall": {
+                "before": 0.81,
+                "after": 0.79,
+                "change": -0.02
+            },
+            "f1_score": {
+                "before": 0.81,
+                "after": 0.798,
+                "change": -0.012
+            },
+            "roc_auc": {
+                "before": 0.8853,
+                "after": 0.886,
+                "change": 0.0007
+            },
+            "pr_auc": {
+                "before": 0.8561,
+                "after": 0.8588,
+                "change": 0.0027
+            }
+        },
+        "explainability_summary": {
+            "total_features": 8,
+            "top_5_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "diagnostic_summary": {
+            "total_issues_detected": 1,
+            "detected_issues": [
+                "outliers"
+            ],
+            "total_features": 8,
+            "top_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "timestamp": "2026-11-05T14:34:58.807269",
+        "experiment_id": "9e43907c-77f3-4853-82ab-1e3d2852fa1e"
+    },
+    {
+        "experiment_id": "7f2f5378-b5b9-4dce-b7cd-83f771fe6ac6",
+        "experiment_name": "Outlier Capping Experiment V3",
+        "applied_fix": "IQR Outlier Capping",
+        "baseline_metrics": {
+            "accuracy": 0.81,
+            "precision": 0.81,
+            "recall": 0.81,
+            "f1_score": 0.81,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    19,
+                    81
+                ]
+            ],
+            "roc_auc": 0.8853,
+            "pr_auc": 0.8561
+        },
+        "fixed_model_metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8061,
+            "recall": 0.79,
+            "f1_score": 0.798,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    21,
+                    79
+                ]
+            ],
+            "roc_auc": 0.886,
+            "pr_auc": 0.8588
+        },
+        "performance_comparison": {
+            "accuracy": {
+                "before": 0.81,
+                "after": 0.8,
+                "change": -0.01
+            },
+            "precision": {
+                "before": 0.81,
+                "after": 0.8061,
+                "change": -0.0039
+            },
+            "recall": {
+                "before": 0.81,
+                "after": 0.79,
+                "change": -0.02
+            },
+            "f1_score": {
+                "before": 0.81,
+                "after": 0.798,
+                "change": -0.012
+            },
+            "roc_auc": {
+                "before": 0.8853,
+                "after": 0.886,
+                "change": 0.0007
+            },
+            "pr_auc": {
+                "before": 0.8561,
+                "after": 0.8588,
+                "change": 0.0027
+            }
+        },
+        "explainability_summary": {
+            "total_features": 8,
+            "top_5_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "diagnostic_summary": {
+            "total_issues_detected": 1,
+            "detected_issues": [
+                "outliers"
+            ],
+            "total_features": 8,
+            "top_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "timestamp": "2026-11-05T14:41:16.598956"
+    },
+    {
+        "experiment_id": "48c6b432-bd01-4a97-a623-7f57c1df1574",
+        "experiment_name": "Outlier Capping Experiment V3",
+        "applied_fix": "IQR Outlier Capping",
+        "baseline_metrics": {
+            "accuracy": 0.81,
+            "precision": 0.81,
+            "recall": 0.81,
+            "f1_score": 0.81,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    19,
+                    81
+                ]
+            ],
+            "roc_auc": 0.8853,
+            "pr_auc": 0.8561
+        },
+        "fixed_model_metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8061,
+            "recall": 0.79,
+            "f1_score": 0.798,
+            "confusion_matrix": [
+                [
+                    81,
+                    19
+                ],
+                [
+                    21,
+                    79
+                ]
+            ],
+            "roc_auc": 0.886,
+            "pr_auc": 0.8588
+        },
+        "performance_comparison": {
+            "accuracy": {
+                "before": 0.81,
+                "after": 0.8,
+                "change": -0.01
+            },
+            "precision": {
+                "before": 0.81,
+                "after": 0.8061,
+                "change": -0.0039
+            },
+            "recall": {
+                "before": 0.81,
+                "after": 0.79,
+                "change": -0.02
+            },
+            "f1_score": {
+                "before": 0.81,
+                "after": 0.798,
+                "change": -0.012
+            },
+            "roc_auc": {
+                "before": 0.8853,
+                "after": 0.886,
+                "change": 0.0007
+            },
+            "pr_auc": {
+                "before": 0.8561,
+                "after": 0.8588,
+                "change": 0.0027
+            }
+        },
+        "explainability_summary": {
+            "total_features": 8,
+            "top_5_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "diagnostic_summary": {
+            "total_issues_detected": 1,
+            "detected_issues": [
+                "outliers"
+            ],
+            "total_features": 8,
+            "top_features": [
+                "feature_2",
+                "feature_4",
+                "feature_7",
+                "feature_6",
+                "feature_3"
+            ]
+        },
+        "timestamp": "2026-11-05T14:42:13.785459"
     }
 ]

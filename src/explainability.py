@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 import shap
-
+import json
+from pathlib import Path
 
 def calculate_shap_values(model, X_train, X_test):
     explainer = shap.LinearExplainer(
@@ -22,6 +23,7 @@ def get_feature_importance(shap_values, feature_names):
         ascending=False
     ).reset_index(drop=True)
     return importance
+
 
 def get_shap_summary(shap_values, feature_names):
     summary = {
@@ -46,3 +48,47 @@ def get_local_explanation(shap_values, feature_names, sample_index=0):
         ascending=False
     ).reset_index(drop=True)
     return explanation
+
+def create_local_summary(local_explanation):
+    top_feature = local_explanation.iloc[0]
+    summary = {
+        "most_influential_feature": top_feature["feature"],
+        "shap_value": round(float(top_feature["shap_value"]), 4),
+        "impact": (
+            "increases model output"
+            if top_feature["shap_value"] > 0
+            else "decreases model output"
+        )
+    }
+    return summary
+
+def create_explainability_report(
+    shap_values,
+    feature_names,
+    sample_index=0
+):
+    importance = get_feature_importance(
+        shap_values, feature_names
+    )
+    global_summary = get_shap_summary(
+        shap_values, feature_names
+    )
+    local_explanation = get_local_explanation(
+        shap_values, feature_names, sample_index
+    )
+    local_summary = create_local_summary(local_explanation)
+    return {
+        "global_summary": global_summary,
+        "feature_importance": importance.to_dict(orient="records"),
+        "local_summary": local_summary,
+        "local_explanation": local_explanation.to_dict(orient="records")
+    }
+    
+def save_explainability_report(report):
+    data_dir = Path(__file__).resolve().parent.parent / "data"
+    data_dir.mkdir(exist_ok=True)
+    file_path = data_dir / "explainability_report.json"
+    with open(file_path, "w") as file:
+        json.dump(report, file, indent=4, default=float)
+
+    return file_path

@@ -1,0 +1,53 @@
+{
+    "generated_at": "2026-11-05T14:54:29.955813",
+    "experiment_ids": {
+        "experiment_1": "48c6b432-bd01-4a97-a623-7f57c1df1574",
+        "experiment_2": "7f2f5378-b5b9-4dce-b7cd-83f771fe6ac6"
+    },
+    "experiment_names": {
+        "experiment_1": "Outlier Capping Experiment V3",
+        "experiment_2": "Outlier Capping Experiment V3"
+    },
+    "metric_comparison": {
+        "f1_score": {
+            "experiment_1": 0.798,
+            "experiment_2": 0.798,
+            "difference": 0.0
+        },
+        "recall": {
+            "experiment_1": 0.79,
+            "experiment_2": 0.79,
+            "difference": 0.0
+        },
+        "precision": {
+            "experiment_1": 0.8061,
+            "experiment_2": 0.8061,
+            "difference": 0.0
+        },
+        "pr_auc": {
+            "experiment_1": 0.8588,
+            "experiment_2": 0.8588,
+            "difference": 0.0
+        },
+        "roc_auc": {
+            "experiment_1": 0.886,
+            "experiment_2": 0.886,
+            "difference": 0.0
+        },
+        "accuracy": {
+            "experiment_1": 0.8,
+            "experiment_2": 0.8,
+            "difference": 0.0
+        }
+    },
+    "winner_analysis": {
+        "metric": "f1_score",
+        "experiment_1": "Outlier Capping Experiment V3",
+        "experiment_2": "Outlier Capping Experiment V3",
+        "score_1": 0.798,
+        "score_2": 0.798,
+        "difference": 0.0,
+        "winner": "Tie",
+        "message": "Both experiments performed equally."
+    }
+}

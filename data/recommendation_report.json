@@ -1,0 +1,21 @@
+{
+    "total_recommendations": 1,
+    "high_priority": 0,
+    "medium_priority": 1,
+    "recommendations": [
+        {
+            "diagnostic": "outliers",
+            "issue": "Potential outliers detected",
+            "reason": "Extreme values may affect some models, but they can also represent valid data.",
+            "recommended_action": "Investigate outliers and test robust handling",
+            "suggested_methods": [
+                "IQR-based capping",
+                "Log transformation where appropriate",
+                "Robust scaling",
+                "Keep legitimate extreme values"
+            ],
+            "priority": "Medium",
+            "requires_user_review": true
+        }
+    ]
+}
