@@ -1,0 +1,80 @@
+[
+    {
+        "experiment_name": "Outlier Capping Experiment",
+        "applied_fix": "IQR Outlier Capping",
+        "baseline_metrics": {
+            "accuracy": 0.81,
+            "precision": 0.81,
+            "recall": 0.81,
+            "f1_score": 0.81
+        },
+        "fixed_model_metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8061224489795918,
+            "recall": 0.79,
+            "f1_score": 0.797979797979798
+        },
+        "performance_comparison": {
+            "accuracy": {
+                "before": 0.81,
+                "after": 0.8,
+                "change": -0.01
+            },
+            "precision": {
+                "before": 0.81,
+                "after": 0.8061,
+                "change": -0.0039
+            },
+            "recall": {
+                "before": 0.81,
+                "after": 0.79,
+                "change": -0.02
+            },
+            "f1_score": {
+                "before": 0.81,
+                "after": 0.798,
+                "change": -0.012
+            }
+        },
+        "timestamp": "2026-11-04T14:48:55.414053"
+    },
+    {
+        "experiment_name": "Outlier Capping Experiment",
+        "applied_fix": "IQR Outlier Capping",
+        "baseline_metrics": {
+            "accuracy": 0.81,
+            "precision": 0.81,
+            "recall": 0.81,
+            "f1_score": 0.81
+        },
+        "fixed_model_metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8061224489795918,
+            "recall": 0.79,
+            "f1_score": 0.797979797979798
+        },
+        "performance_comparison": {
+            "accuracy": {
+                "before": 0.81,
+                "after": 0.8,
+                "change": -0.01
+            },
+            "precision": {
+                "before": 0.81,
+                "after": 0.8061,
+                "change": -0.0039
+            },
+            "recall": {
+                "before": 0.81,
+                "after": 0.79,
+                "change": -0.02
+            },
+            "f1_score": {
+                "before": 0.81,
+                "after": 0.798,
+                "change": -0.012
+            }
+        },
+        "timestamp": "2026-11-05T13:52:40.436724"
+    }
+]

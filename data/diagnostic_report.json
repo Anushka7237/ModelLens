@@ -1,0 +1,81 @@
+{
+    "status": {
+        "missing_values": false,
+        "duplicate_rows": false,
+        "constant_features": false,
+        "near_constant_features": false,
+        "high_correlations": false,
+        "outliers": true,
+        "class_imbalance": false,
+        "overfitting": false,
+        "underfitting": false,
+        "distribution_shift": false,
+        "low_variance_features": false,
+        "target_leakage": false
+    },
+    "summary": [
+        {
+            "issue": "Outliers",
+            "status": "detected",
+            "severity": "high",
+            "evidence": {
+                "feature_1": {
+                    "count": 7,
+                    "percentage": 0.7,
+                    "non_outlier_count": 993,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                },
+                "feature_2": {
+                    "count": 51,
+                    "percentage": 5.1,
+                    "non_outlier_count": 949,
+                    "severity": "high",
+                    "reason": "More than 5% of the values are detected as outliers."
+                },
+                "feature_3": {
+                    "count": 10,
+                    "percentage": 1.0,
+                    "non_outlier_count": 990,
+                    "severity": "medium",
+                    "reason": "Between 1% and 5% of the values are detected as outliers."
+                },
+                "feature_4": {
+                    "count": 8,
+                    "percentage": 0.8,
+                    "non_outlier_count": 992,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                },
+                "feature_5": {
+                    "count": 4,
+                    "percentage": 0.4,
+                    "non_outlier_count": 996,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                },
+                "feature_6": {
+                    "count": 2,
+                    "percentage": 0.2,
+                    "non_outlier_count": 998,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                },
+                "feature_7": {
+                    "count": 6,
+                    "percentage": 0.6,
+                    "non_outlier_count": 994,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                },
+                "feature_8": {
+                    "count": 4,
+                    "percentage": 0.4,
+                    "non_outlier_count": 996,
+                    "severity": "low",
+                    "reason": "Less than 1% of the values are detected as outliers."
+                }
+            }
+        }
+    ]
+}
